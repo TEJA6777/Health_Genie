@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>final report💉</title>
+  </head>
+  
+  <body>
+    <div id="top">
+      <img src="C:\Users\Bhargavi\OneDrive\Desktop\HR\Health_Genie\Hackrookies.jpg" alt="" id="logo">
+      <ul id="navList">
+        <li><a href="C:\Users\Bhargavi\OneDrive\Desktop\HR\Health_Genie\index.html" id="selectedPage">Home</a></li>
+        <li><a href="C:\Users\Bhargavi\OneDrive\Desktop\HR\Health_Genie\myProfile.html">My Profile</a></li>
+      </ul>
+    </div>
+</body>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color:#B2EBF2;;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+      color: #333;
+    }
+
+    #report {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color:  white;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Final Report</h1>
+  <div id="report"></div>
+
+  <script>
+    // Parse query parameters from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const patientName = urlParams.get("patientName");
+    const patientID = urlParams.get("patientID");
+    const bpLevel = urlParams.get("bpLevel");
+    const sugarLevel = urlParams.get("sugarLevel");
+    const problems = urlParams.get("problems");
+    const symptoms = urlParams.get("symptoms");
+
+    // Display the final report
+    const reportDiv = document.getElementById("report");
+    reportDiv.innerHTML = `
+      <p><strong>Patient Name:</strong> ${patientName}</p>
+      <p><strong>Patient ID:</strong> ${patientID}</p>
+      <p><strong>Blood Pressure Level:</strong> ${bpLevel}</p>
+      <p><strong>Sugar Level:</strong> ${sugarLevel}</p>
+      <p><strong>Problems:</strong> ${problems}</p>
+      <p><strong>Symptoms:</strong> ${symptoms}</p>
+    `;
+  </script>
+</body>
+
+</html>

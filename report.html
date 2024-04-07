@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Update Report</title>
+
+  <body>
+    <div id="top">
+      <img src="C:\Users\Bhargavi\OneDrive\Desktop\HR\Health_Genie\Hackrookies.jpg" alt="" id="logo">
+      <ul id="navList">
+        <li><a href="C:\Users\Bhargavi\OneDrive\Desktop\HR\Health_Genie\index.html" id="selectedPage">Home</a></li>
+        <li><a href="C:\Users\Bhargavi\OneDrive\Desktop\HR\Health_Genie\myProfile.html">My Profile</a></li>
+      </ul>
+    </div>
+</body>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #B2EBF2;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+      color: #333;
+    }
+
+    #reportForm {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      box-sizing: border-box;
+    }
+
+    button[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Update Report</h1>
+  <form id="reportForm" action="process_report.php" method="post">
+    <label for="patientName">Patient Name:</label>
+    <input type="text" id="patientName" name="patientName" required><br><br>
+    <label for="patientID">Patient ID:</label>
+    <input type="text" id="patientID" name="patientID" required><br><br>
+    <label for="bpLevel">Blood Pressure Level:</label>
+    <input type="text" id="bpLevel" name="bpLevel" required><br><br>
+    <label for="sugarLevel">Sugar Level:</label>
+    <input type="text" id="sugarLevel" name="sugarLevel" required><br><br>
+    <label for="problems">Problems:</label><br>
+    <textarea id="problems" name="problems" rows="4" cols="50" required></textarea><br><br>
+    <label for="symptoms">Symptoms:</label><br>
+    <textarea id="symptoms" name="symptoms" rows="4" cols="50" required></textarea><br><br>
+    <button type="submit">Update</button>
+  </form>
+
+  <script>
+    document.getElementById("reportForm").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+      
+      // Get form data
+      const formData = new FormData(event.target);
+      
+      // Convert form data to object
+      const formDataObj = Object.fromEntries(formData.entries());
+      
+      // Redirect to final report page with form data
+      window.location.href = `final_report.html?${new URLSearchParams(formDataObj).toString()}`;
+    });
+  </script>
+</body>
+
+</html>
+
+
+</html>
